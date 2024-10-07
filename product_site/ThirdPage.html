@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fit Quest - Search Gyms & Restaurants</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- Heading of the page-->
+    <h1 style="text-align: center;">Fit Quest - Search Gyms & Restaurants</h1>
+
+    <!-- Paragraph to details what the page will be about -->
+    <p>Use the search tool to find fitness centers, gyms, and healthy restaurants near you. Enter your location and choose the type of place you are looking for. Discover details, amenities, photos, and reviews!</p>
+
+    <!-- This form is for users to input a location when searching for gyms or restaurants -->
+    <h2>Search for Gyms or Restaurants</h2>
+    <form action="#" method="get">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+            <option value="gym">Gym</option>
+            <option value="restaurant">Restaurant</option>
+        </select>
+
+        <input type="submit" value="Search">
+    </form>
+
+    <!-- Search Results Subheading -->
+    <h2>Results</h2>
+
+    <!-- Box for Location and Type after search -->
+    <div style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <h3>Location & Type</h3>
+        <img src="Images/eatslocation.jpg" alt="This is photo of the location" style="width: 30%; height: 20;">
+        <p><strong>Location:</strong> [search results here]</p>
+        <p><strong>Type:</strong> [search results here]</p>
+    </div>
+
+    <!-- Box for Details and Amenities -->
+    <div style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <h3>Details & Amenities</h3>
+        <img src="Images/gymamen.jpg" alt="This is photo of the restaurant or gym amenities and information would appear" style="width: 30%; height: auto;">
+        <p><strong>Details:</strong> [Details of the location]</p>
+        <p><strong>Amenities:</strong> [Amenities available]</p>
+    </div>
+
+    <!-- Box for Photos and Reviews -->
+    <div style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <h3>Photos & Reviews</h3>
+        <img src="Images/groupeats.jpg" alt="This is photo of the restaurant or gym would appear" style="width: 30%; height: auto;">
+    </div>
+
+    <!-- Favorites Option (Without actual functionality but just a checkbox) -->
+    <p><strong>Favorites:</strong> You can add this location to your favorites later</p>
+    <label for="favorites">
+    <input type="checkbox" id="favorites" name="favorites">
+    Add to Favorites
+    </label>
+
+    <p><a href="index.html">Return to Homepage</a></p> <!-- Link to the homepage -->
+    <p><a href="second-page.html">Go to Second Page</a></p> <!-- Link to the second page -->
+    
+   
+</body>
+</html>

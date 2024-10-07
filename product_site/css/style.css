@@ -1,0 +1,71 @@
+/*style sheet for the entire website */
+
+
+/* background color to the entire body of the page */
+body {
+    background-color: #80b8e9; 
+    font-family: Arial, sans-serif; 
+}
+
+/* h1 Elements */
+h1 {
+    color: #171996; /* color for main heading */
+    font-family: 'Verdana', sans-serif;
+    font-size: 30px; 
+    text-align: center; 
+    padding: 15px; 
+}
+
+/* h2 Elements */
+h2 {
+    color: #2a30e3; /* Color for subheadings */
+    font-size: 30px; /* Font size for subheadings */
+    margin-top: 15px; 
+    text-align: center; 
+}
+
+/* Style for all paragraph elements */
+p {
+    color: #292d65; /*color for paragraphs */
+    font-family: 'Georgia', serif; 
+    font-size: 16px; 
+    line-height: 1.5; /* Space between lines to be easy to read */
+    margin: 10px 20px; 
+}
+
+/* Element Selector for all li list*/
+li {
+    list-style-type: square; 
+    margin-left: 20px; 
+}
+
+
+/* Class Selector */
+.highlight {
+    background-color: #3b80ff; /* Yellow background */
+    color: #0d0707; 
+    font-weight: bold;
+}
+
+
+
+/* ID Selector*/
+#main-heading {
+    font-size: 32px; /* Font size for main heading */
+    text-transform: uppercase; 
+}
+
+
+
+/* Link Styles */
+a {
+    color: #2980b9; 
+}
+
+a:visited {
+    color: #8e44ad; 
+}
+
+a:hover {
+    color: #e74c3c; 
+}
