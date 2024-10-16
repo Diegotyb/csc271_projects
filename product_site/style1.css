@@ -1,0 +1,51 @@
+/* General Body Styling */
+body {
+    background-color: #80b8e9; 
+    font-family: Arial, sans-serif; 
+}
+
+/* Image Section Styles */
+
+/* Background image for a section or div with class 'img1' */
+.img1 {
+    background-image: url("./Images/Unknown.jpeg");
+    background-size: cover; 
+    background-position: center; 
+}
+
+/* Background image for a section or div with class 'img2' */
+.img2 {
+    background-image: url("./Images/fitness-gym.jpg");
+    background-size: cover; 
+    background-position: center; 
+}
+
+/* General container for third page content */
+.ThirdPgContainer {
+    background-size: cover; 
+    background-position: center; 
+}
+
+/* Background images for the specific sections on the third page */
+
+/* First container with background image for 'group eats' */
+.ThirdPg1 {
+    background-image: url("./Images/groupeats.jpg");
+}
+
+/* Second container with background image for 'Planet Fitness' */
+.ThirdPg2 {
+    background-image: url("./Images/planetf.png");
+}
+
+/* Third container with background image for 'eats location' */
+.ThirdPg3 {
+    background-image: url("./Images/eatslocation.jpg");
+}
+
+/* Fourth container with background image for 'gym amenities' */
+.ThirdPg4 {
+    background-image: url("./Images/gymamen.jpg");
+}
+
+
