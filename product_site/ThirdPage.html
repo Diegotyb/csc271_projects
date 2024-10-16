@@ -1,65 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Fit Quest - Search Gyms & Restaurants</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Heading of the page-->
-    <h1 style="text-align: center;">Fit Quest - Search Gyms & Restaurants</h1>
-
-    <!-- Paragraph to details what the page will be about -->
-    <p>Use the search tool to find fitness centers, gyms, and healthy restaurants near you. Enter your location and choose the type of place you are looking for. Discover details, amenities, photos, and reviews!</p>
-
-    <!-- This form is for users to input a location when searching for gyms or restaurants -->
-    <h2>Search for Gyms or Restaurants</h2>
-    <form action="#" method="get">
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" placeholder="Enter location" required>
-
-        <label for="type">Type:</label>
-        <select id="type" name="type">
-            <option value="gym">Gym</option>
-            <option value="restaurant">Restaurant</option>
-        </select>
-        <input type="submit" value="Search">
-    </form>
-
-    <!-- Search Results Subheading -->
-    <h2>Results</h2>
-
-    <!-- Box for Location and Type after search -->
-    <div style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
-        <h3>Location & Type</h3>
-        <img src="Images/eatslocation.jpg" alt="This is photo of the location" style="width: 30%; height: 100px;">
-        <p><strong>Location:</strong> [search results here]</p>
-        <p><strong>Type:</strong> [search results here]</p>
-    </div>
-    <!-- Box for Details and Amenities -->
-    <div style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
-        <h3>Details & Amenities</h3>
-        <img src="Images/gymamen.jpg" alt="This is photo of the restaurant or gym amenities and information would appear" style="width: 30%; height: auto;">
-        <p><strong>Details:</strong> [Details of the location]</p>
-        <p><strong>Amenities:</strong> [Amenities available]</p>
-    </div>
-
-    <!-- Box for Photos and Reviews -->
-    <div style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
-        <h3>Photos & Reviews</h3>
-        <img src="Images/groupeats.jpg" alt="This is photo of the restaurant or gym would appear" style="width: 30%; height: auto;">
-    </div>
-
-    <!-- Favorites Option (Without actual functionality but just a checkbox) -->
-    <p><strong>Favorites:</strong> You can add this location to your favorites later</p>
-    <label for="favorites">
-        <input type="checkbox" id="favorites" name="favorites">
-    Add to Favorites
-    </label>
-
-    <p><a href="index.html">Return to Homepage</a></p> <!-- Link to the homepage -->
-    <p><a href="SecondPage.html">Go to Second Page</a></p> <!-- Link to the second page -->
     
-   
+    <!-- Header Section -->
+    <div class="container bg-info-subtle">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <!-- Logo and Site Link -->
+            <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="Images/DiegoLogo-2.png" class="bi me-2" width="150" alt="Logo">
+            </a>
+
+            <!-- Navigation Menu -->
+            <ul class="nav nav-pills align-content-center">
+                <li class="nav-item"><a href="./index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="./SecondPage.html" class="nav-link">Map View</a></li>
+                <li class="nav-item"><a href="./ThirdPage.html" class="nav-link active">Gyms and Restaurants</a></li>
+                <li class="nav-item"><a href="./FourthPage.html" class="nav-link">Register Login</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- Main Content Section -->
+    <main class="container my-5 bg-light">
+        <!-- Page Title and Description -->
+        <h1 class="text-center">Search Gyms & Restaurants</h1>
+        <p>Use the search tool to find fitness centers, gyms, and healthy restaurants near you. Enter your location and choose the type of place you are looking for. Discover details, amenities, photos, and reviews!</p>
+
+        <!-- Search Form -->
+        <h2 class="mt-4">Search for Gyms or Restaurants</h2>
+        <form action="#" method="get" class="form-inline">
+            <!-- Location Input -->
+            <div class="form-group mb-3 col-4">
+                <label for="location" class="mr-2">Location:</label>
+                <input type="text" id="location" name="location" class="form-control" placeholder="Enter location" required>
+            </div>
+
+            <!-- Type Dropdown -->
+            <div class="form-group mb-3 col-4">
+                <label for="type" class="mr-2">Type:</label>
+                <select id="type" name="type" class="form-control">
+                    <option value="gym">Gym</option>
+                    <option value="restaurant">Restaurant</option>
+                </select>
+            </div>
+
+            <!-- Search Button -->
+            <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </form>
+
+        <!-- Search Results Section -->
+        <h2>Results</h2>
+
+        <!-- Results Display -->
+        <section>
+            <div class="container col-12 px-4 position-relative">
+                <!-- Album Section to Display Cards -->
+                <div class="album py-5 my-4 bg-body-tertiary">
+                    <div class="container">
+                        <div class="row row-cols-2 g-3">
+                            <!-- First Card (Vegetarian Restaurants) -->
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="ThirdPg1 ThirdPgContainer">
+                                        <svg class="bd-placeholder-img card-img-top" height="225" width="50vh" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vegetarian Restaurants</h5>
+                                        <p class="card-text">4.9 Rating</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title">$10-20 a dish</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card (Planet Fitness Premium) -->
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="ThirdPg2 ThirdPgContainer">
+                                        <svg class="bd-placeholder-img card-img-top" height="225" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Planet Fitness Premium</h5>
+                                        <p class="card-text">3.9 Rating</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title">$10-25 Membership</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Third Card (Green Vitality Bistro) -->
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="ThirdPg3 ThirdPgContainer">
+                                        <svg class="bd-placeholder-img card-img-top" height="225" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Green Vitality Bistro</h5>
+                                        <p class="card-text">4.4 Rating</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title">$18-30 a dish</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fourth Card (Peak Performance) -->
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="ThirdPg4 ThirdPgContainer">
+                                        <svg class="bd-placeholder-img card-img-top" height="225" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Peak Performance</h5>
+                                        <p class="card-text">4.6 Rating</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title">$20-45 Membership</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-4 bg-light">
+        <p>Created by: Diego Romero</p>
+        <p>Contact: <a href="mailto:diego_romero@uri.edu">diego_romero@uri.edu</a></p>
+    </footer>
+    
 </body>
 </html>
