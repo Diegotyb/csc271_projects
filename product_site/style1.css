@@ -53,6 +53,9 @@ body {
 
 /* Change the link color when hovering */
 .nav{--bs-nav-link-hover-color: #3cc90a;}
+    .nav-link:hover {
+        color: #3cc90a;
+    }
 
 
 .nav-link:visited {
