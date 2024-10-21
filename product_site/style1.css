@@ -49,3 +49,20 @@ body {
 }
 
 
+
+
+/* Change the link color when hovering */
+.nav-link:hover {
+    color: #ff6600; /* Example: Change the hover color to orange */
+}
+
+
+.nav-link:visited {
+    color: #008000; /* Example: Change the visited color to green */
+}
+
+
+.nav-link.active {
+    color: #ffd500; /* Example: Change the active color to red */
+}
+
