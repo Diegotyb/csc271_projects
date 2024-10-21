@@ -58,9 +58,7 @@ body {
     }
 
 
-.nav-link:visited {
-    color: #008000; /* Example: Change the visited color to green */
-}
+
 
 
 .nav-link.active {
