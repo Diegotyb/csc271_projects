@@ -101,14 +101,31 @@
             <div class="form-group">
                 <p>Preferred Workout Type:</p>
                 <div class="form-check">
-                    <input type="radio" id="gym" name="workoutType" value="Gym" class="form-check-input" required>
-                    <label for="gym" class="form-check-label">Gym</label>
+                    <input type="radio" id="gymRadio" name="workoutType" value="Gym" class="form-check-input" required>
+                    <label for="gymRadio" class="form-check-label">Gym</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" id="outdoor" name="workoutType" value="Outdoor" class="form-check-input">
-                    <label for="outdoor" class="form-check-label">Outdoor</label>
+                    <input type="radio" id="outdoorRadio" name="workoutType" value="Outdoor" class="form-check-input">
+                    <label for="outdoorRadio" class="form-check-label">Outdoor</label>
                 </div>
             </div>
+
+            <!-- Table for displaying workout locations and ratings -->
+            <div class="workoutTable">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Location Name</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody id="workoutTableBody">
+                        <!-- Content will be updated here -->
+                    </tbody>
+                </table>
+            </div>
+
+
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -124,11 +141,15 @@
         </div>
     </main>
 
+
     <!-- Footer Section -->
     <footer class="text-center py-4 bg-light">
         <p>Created by: Diego Romero</p>
         <p>Contact: <a href="mailto:diego_romero@uri.edu">diego_romero@uri.edu</a></p>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/simple_script.js"></script>
 
 </body>
 

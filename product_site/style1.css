@@ -48,7 +48,9 @@ body {
     background-image: url("./Images/gymamen.jpg");
 }
 
-
+.workoutTable{ /* Table for the workout page */
+    display: none;
+}
 
 
 /* Change the link color when hovering */
@@ -57,11 +59,7 @@ body {
         color: #3cc90a;
     }
 
-
-
-
-
-.nav-link.active {
-    color: #ffd500; /* Example: Change the active color to red */
+.nav-link.active { /* Change the active link color */
+    color: #ffd500; 
 }
 
