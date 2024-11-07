@@ -35,19 +35,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         //added commment to every line in first piece of each new code then left the rest of the code as is
         // This creates and appends new rows for each of the locations
-        data.forEach(item => { //forEach method is used to iterate through each item in the array
+        for (let i = 0; i < data.length; i++) {
+            const item = data[i];
             const row = document.createElement("tr");
 
-            const locationCell = document.createElement("td"); //creates a new table cell element
-            locationCell.textContent = item.location; //sets the text content of the cell to the location name
-            row.appendChild(locationCell); //appends the cell to the row
+            const locationCell = document.createElement("td");
+            locationCell.textContent = item.location;
+            row.appendChild(locationCell);
 
-            const ratingCell = document.createElement("td"); //same process is repeated
+            const ratingCell = document.createElement("td");
             ratingCell.textContent = item.rating;
             row.appendChild(ratingCell);
 
             tableBody.appendChild(row);
-        });
+        }
 
         // This adds rows for average rating
         const averageRow = document.createElement("tr"); //creates a new row element

@@ -97,16 +97,71 @@
                 <input type="email" id="email" name="email" class="form-control" required>
             </div>
 
-            <!-- Radio buttons for workout preference -->
-            <div class="form-group">
-                <p>Preferred Workout Type:</p>
-                <div class="form-check">
+            <!-- Q1: Radio Buttons for workout environment -->
+            <div class="mb-3">
+                <label for="workout-environment" class="form-label">Preferred Enviroment</label>
+                <div class="workout-environment">
+                  <div class="form-check form-check-inline">
                     <input type="radio" id="gymRadio" name="workoutType" value="Gym" class="form-check-input" required>
-                    <label for="gymRadio" class="form-check-label">Gym</label>
-                </div>
-                <div class="form-check">
+                    <label for="gymRadio" class="form-check-label">Indoor</label>
+                  </div>
+                  <div class="form-check form-check-inline">
                     <input type="radio" id="outdoorRadio" name="workoutType" value="Outdoor" class="form-check-input">
                     <label for="outdoorRadio" class="form-check-label">Outdoor</label>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Q2a: Length of workout sessions / If indoors-->
+            <div class="mb-3">
+                <label for="workOutLength" class="form-label">What's your length of workout sessions? </label>
+                <div class="workOutLength">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workoutSession" id="30mins" value="30 minutes">
+                        <label class="form-check-label" for="30mins">30 minutes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workoutSession" id="1hour" value="1 hour">
+                        <label class="form-check-label" for="1hour">1 Hour</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workoutSession" id="hourhalf" value="1.5 hours">
+                        <label class="form-check-label" for="hourhalf">1.5 Hours</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workoutSession" id="2hours" value="2 hours">
+                        <label class="form-check-label" for="2hours">2 Hours</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q2b: Preferred workout type / If outdoors -->
+            <div class="mb-3">
+                <label for="outDoorOptions" class="form-label">If outdoor, what's your preferred workout type? </label>
+                <div class="outDoorOptions">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="outSide" id="Cardio" value="true">
+                        <label class="form-check-label" for="Cardio">Cardio</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="outSide" id="Strength" value="false">
+                        <label class="form-check-label" for="Strength">Strength</label>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q3: Preferred workout equipment -->
+             <div class="mb-3">
+                <label for="workoutEquipment" class="form-label">Do you need equipment?</label>
+                <div class="vehicleEquipment">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workoutEquip" id="equipmentYes" value="Equipment">
+                        <label class="form-check-label" for="equipmentYes">Equipment</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workoutEquip" id="equipmentNo" value="Bodyweight">
+                        <label class="form-check-label" for="equipmentNo">Bodyweight</label>
+                    </div>
                 </div>
             </div>
 
@@ -149,8 +204,8 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="./js/simple_script.js"></script>
+     <script src="./js/simple_script.js"></script>
+    <script src="./js/workingPreference.js"></script>
 
-</body>
-
+    </body>
 </html>
