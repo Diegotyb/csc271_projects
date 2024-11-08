@@ -9,22 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const outdoorOptions = document.querySelector(".outDoorOptions");
     const workoutEquipmentOptions = document.querySelector(".vehicleEquipment");
 
+    function toggleElements(elements, display) {
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].style.display = display;
+        }
+    }
+
     // Hide all subsequent question groups initially
-    workoutLengthOptions.style.display = "none";
-    outdoorOptions.style.display = "none";
-    workoutEquipmentOptions.style.display = "none";
+    toggleElements([workoutLengthOptions, outdoorOptions, workoutEquipmentOptions], "none");
 
     // Event listeners for environment selection
     gymRadio.addEventListener("change", () => {
-        workoutLengthOptions.style.display = "block";
-        outdoorOptions.style.display = "none";
-        workoutEquipmentOptions.style.display = "none";
+        toggleElements([workoutLengthOptions, outdoorOptions, workoutEquipmentOptions], "none");
+        toggleElements([workoutLengthOptions], "block");
     });
 
     outdoorRadio.addEventListener("change", () => {
-        workoutLengthOptions.style.display = "none";
-        outdoorOptions.style.display = "block";
-        workoutEquipmentOptions.style.display = "none";
+        toggleElements([workoutLengthOptions, outdoorOptions, workoutEquipmentOptions], "none");
+        toggleElements([outdoorOptions], "block");
     });
 
     // Event listeners for indoor workout length
