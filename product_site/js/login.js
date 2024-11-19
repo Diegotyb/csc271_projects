@@ -4,17 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const regPassword = document.getElementById('floatingPassword');
     const regForm = document.getElementById('registerForm');
 
-    // Login form elements
+    //Login form elements
     const loginEmail = document.getElementById('floatingInput1');
     const loginPassword = document.getElementById('floatingPassword1');
     const loginForm = document.getElementById('loginForm');
 
-    // function to display messages
+    //function to display messages
     const showMessage = (input, message, isValid) => {
-        let feedback = input.parentNode.querySelector('small'); // Finds the existing feedback message
+        let feedback = input.parentNode.querySelector('small'); 
         if (!feedback) {
             feedback = document.createElement('small');
-            feedback.style.display = 'block';
+            feedback.style.display = 'block'; 
             input.parentNode.appendChild(feedback);
         }
         // Updates feedback content and color
@@ -26,20 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
     const validatePassword = (password) => password.length >= 6;
 
-    // focus event listeners
-    for (const input of [regEmail, loginEmail]) {
-        input.addEventListener('focus', () =>
-            showMessage(input, 'Enter a valid email address', true)
-        );
+    // Add focus event listeners
+    for (let i = 0; i < [regEmail, loginEmail].length; i++) {
+        const input = [regEmail, loginEmail][i];
+        input.addEventListener('focus', () => {
+            showMessage(input, 'Enter a valid email address', true);
+        });
     }
-    for (const input of [regPassword, loginPassword]) {
-        input.addEventListener('focus', () =>
-            showMessage(input, 'Password must be at least 6 characters long', true)
-        );
+    for (let i = 0; i < [regPassword, loginPassword].length; i++) {
+        const input = [regPassword, loginPassword][i];
+        input.addEventListener('focus', () => {
+            showMessage(input, 'Password must be at least 6 characters long', true);
+        });
     }
 
-    // blur event listeners
-    for (const input of [regEmail, loginEmail]) {
+    // Add blur event listeners
+    for (let i = 0; i < [regEmail, loginEmail].length; i++) {
+        const input = [regEmail, loginEmail][i];
         input.addEventListener('blur', () => {
             if (!validateEmail(input.value)) {
                 showMessage(input, 'Invalid email address', false);
@@ -48,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    for (const input of [regPassword, loginPassword]) {
+    for (let i = 0; i < [regPassword, loginPassword].length; i++) {
+        const input = [regPassword, loginPassword][i];
         input.addEventListener('blur', () => {
             if (!validatePassword(input.value)) {
                 showMessage(input, 'Password must be at least 6 characters long', false);
