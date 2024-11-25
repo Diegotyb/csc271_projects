@@ -1,40 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Selects elements using different DOM methods and stores them in variables
-    const gymRadio = document.getElementById("gymRadio"); 
-    const outdoorRadio = document.getElementById("outdoorRadio"); 
-    const tableBody = document.getElementById("workoutTableBody"); 
-    const table = document.getElementsByClassName("workoutTable")[0]; 
+    const gymRadio = document.getElementById("gymRadio");
+    const outdoorRadio = document.getElementById("outdoorRadio");
+    const tableBody = document.getElementById("workoutTableBody");
+    const table = document.getElementsByClassName("workoutTable")[0];
 
-    // these arrays of objects contain the location names and ratings for each workout location
+    // Class definition for WorkoutLocation
+    class WorkoutLocation {
+        constructor(location, rating) {
+            this.location = location;
+            this.rating = rating;
+        }
+
+        // Method to calculate the average rating of an array of WorkoutLocation instances
+        calculateAverage(data) {
+            const totalRating = data.reduce((sum, location) => sum + location.rating, 0);
+            return (totalRating / data.length).toFixed(2);
+        }
+    }
+
+    // Data arrays for gym and outdoor locations
     const gymData = [
-        { location: "Planet Fitness", rating: 3.9 },
-        { location: "Edge Gym", rating: 4.8 },
-        { location: "Golds Gym", rating: 4.6 }
+        new WorkoutLocation("Planet Fitness", 3.9),
+        new WorkoutLocation("Edge Gym", 4.8),
+        new WorkoutLocation("Golds Gym", 4.6),
     ];
 
     const outdoorData = [
-        { location: "Lincoln Woods", rating: 4.7 },
-        { location: "Hilltop Trail", rating: 4.9 },
-        { location: "Lakefront Track", rating: 4.3 }
+        new WorkoutLocation("Lincoln Woods", 4.7),
+        new WorkoutLocation("Hilltop Trail", 4.9),
+        new WorkoutLocation("Lakefront Track", 4.3),
     ];
-
-    // Simple average calculation
-    function calculateAverage(data) {
-        // Accessing elements of array directly
-        const rating1 = data[0].rating;
-        const rating2 = data[1].rating;
-        const rating3 = data[2].rating;
-        return ((rating1 + rating2 + rating3) / 3).toFixed(2);
-    }
 
     // Function to update table content
     function updateTable(data) {
         // Clear existing rows
         tableBody.innerHTML = "";
 
+        // Create an instance of WorkoutLocation to access the calculateAverage method
+        const workoutInstance = new WorkoutLocation();
 
-        //added commment to every line in first piece of each new code then left the rest of the code as is
-        // This creates and appends new rows for each of the locations
+        // Create and append new rows for each location
         for (let i = 0; i < data.length; i++) {
             const item = data[i];
             const row = document.createElement("tr");
@@ -50,31 +56,31 @@ document.addEventListener("DOMContentLoaded", function() {
             tableBody.appendChild(row);
         }
 
-        // This adds rows for average rating
-        const averageRow = document.createElement("tr"); //creates a new row element
+        // Add row for average rating
+        const averageRow = document.createElement("tr");
 
-        const averageLabelCell = document.createElement("td"); //creates a new cell element
-        averageLabelCell.innerHTML = "<strong>Average Rating</strong>"; //sets the inner HTML of the cell to the average rating label
-        averageRow.appendChild(averageLabelCell); //appends the cell to the row
+        const averageLabelCell = document.createElement("td");
+        averageLabelCell.innerHTML = "<strong>Average Rating</strong>";
+        averageRow.appendChild(averageLabelCell);
 
         const averageValueCell = document.createElement("td");
-        averageValueCell.textContent = calculateAverage(data);
+        averageValueCell.textContent = workoutInstance.calculateAverage(data);
         averageRow.appendChild(averageValueCell);
 
         tableBody.appendChild(averageRow);
     }
 
-    //selects the gymRadio input element using CSS selector
-    document.querySelector("input#gymRadio").addEventListener("change", function() { 
-        if (gymRadio.checked) { //checks if the gymRadio button is selected
+    // Event listener for gym radio button
+    document.querySelector("input#gymRadio").addEventListener("change", function () {
+        if (gymRadio.checked) {
             table.style.display = "block";
             updateTable(gymData);
         }
     });
 
-    //Retrieves all <input> elements and selects the fourth [3] 
-    document.getElementsByTagName("input")[3].addEventListener("change", function() { 
-        if (outdoorRadio.checked) { //checks if the outdoorRadio button is selected
+    // Event listener for outdoor radio button
+    document.getElementsByTagName("input")[3].addEventListener("change", function () {
+        if (outdoorRadio.checked) {
             table.style.display = "block";
             updateTable(outdoorData);
         }
